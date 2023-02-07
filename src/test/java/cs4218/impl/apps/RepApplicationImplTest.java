@@ -34,7 +34,6 @@ class RepApplicationImplTest {
     }
 
     @Test
-    @Disabled // Temporarily disabled failing test
     void run_SimpleValues_PrintsCorrectValues() throws RepException, IOException {
         // Given
         List<String> tokens = Arrays.asList("Hello", "abced", "hello-world.txt");
@@ -45,7 +44,7 @@ class RepApplicationImplTest {
         this.app.run(tokens);
 
         // Then
-        assertEquals("abced World!", this.out.toString());
+        assertEquals("abced World!" + System.lineSeparator(), this.out.toString());
     }
 
     @Test
